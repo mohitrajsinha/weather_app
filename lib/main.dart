@@ -74,5 +74,20 @@ Future<Position> _determinePosition() async {
 
   // When we reach here, permissions are granted and we can
   // continue accessing the position of the device.
-  return await Geolocator.getCurrentPosition();
+  // return await Geolocator.getCurrentPosition(
+  //     forceAndroidLocationManager: true, desiredAccuracy: LocationAccuracy.low);
+  Position? lastKnownPosition = await Geolocator.getLastKnownPosition();
+
+  // Check if the last known location is recent enough (within a certain threshold)
+  if (lastKnownPosition != null &&
+      DateTime.now().difference(lastKnownPosition.timestamp) <
+          const Duration(minutes: 5)) {
+    return lastKnownPosition; // Return the last known location if it's recent
+  }
+
+  // If the last known location is not recent or unavailable, fetch the current location
+  return await Geolocator.getCurrentPosition(
+    forceAndroidLocationManager: true,
+    desiredAccuracy: LocationAccuracy.low,
+  );
 }
