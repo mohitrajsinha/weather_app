@@ -19,7 +19,9 @@ This Flutter Weather App is a weather application developed with Flutter, using 
 - Clean and intuitive user interface.
 ## Screenshots
 
-![App Screenshot](weather_app\assets\Screenshot_1.png)
+![Screenshot_1](https://github.com/mohitrajsinha/weather_app/assets/112544299/044368ab-7473-4a53-bc27-19347beb13c0)
+
+
 
 ## Prerequisites
 
