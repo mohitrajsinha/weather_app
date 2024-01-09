@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:weather_app/screens/widgets/blurred_container.dart';
 import 'package:weather_app/screens/widgets/circle_container.dart';
 import 'package:weather_app/screens/widgets/color_container.dart';
@@ -16,16 +15,12 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      // resizeToAvoidBottomInset: false,
       backgroundColor: Colors.black,
       extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        systemOverlayStyle:
-            const SystemUiOverlayStyle(statusBarBrightness: Brightness.dark),
-      ),
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(25, 1.1 * kToolbarHeight, 23, 20),
+        padding: const EdgeInsets.fromLTRB(
+            25, kToolbarHeight, 23, kBottomNavigationBarHeight),
         child: SizedBox(
           height: MediaQuery.of(context).size.height,
           child: const Stack(
