@@ -15,12 +15,12 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: true,
       backgroundColor: Colors.black,
       extendBodyBehindAppBar: true,
       body: Padding(
-        padding: const EdgeInsets.fromLTRB(
-            25, kToolbarHeight, 23, kBottomNavigationBarHeight),
+        padding:
+            const EdgeInsets.only(left: 25, top: kToolbarHeight, right: 25),
         child: SizedBox(
           height: MediaQuery.of(context).size.height,
           child: const Stack(
